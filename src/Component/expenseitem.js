@@ -1,17 +1,19 @@
-import './expenseitem.css';
+import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
+import ExpenseDetails from "./ExpenseDetails"
 
-function Expenseitem(){
-    
-    return (
-    <div className='expense-item'>
-        <h2>Expenseitem</h2>
-        <div className='expense-item_description'></div>
-            <div>Food RS 10 </div>
-            <div> Petrol RS 100</div>
-                <div>Movies RS 200</div>
-                
-        
-        </div>
-    );
+function ExpenseItem(props) {
+  return (
+    <div className="expense-item">
+      <ExpenseDate date={props.date} />
+
+      <div className="expense-item__description">
+        <h2>{props.title}</h2>
+        <h2>{props.location}</h2>
+        <ExpenseDetails amount={props.amount}/>
+      </div>
+    </div>
+  );
 }
-export default Expenseitem;
+
+export default ExpenseItem;
